@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "eu.nitjsefnie.mod.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinLootTable",
+    "MixinFishingBobberEntity",
+    "MixinDebugStickItem"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}
