@@ -5,7 +5,9 @@
   "mixins": [
     "MixinLootTable",
     "MixinFishingBobberEntity",
-    "MixinDebugStickItem"
+    "MixinDebugStickItem",
+    "MixinPlayerManager",
+    "MixinServerPlayerEntity"
   ],
   "injectors": {
     "defaultRequire": 1
