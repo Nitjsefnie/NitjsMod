@@ -1,4 +1,4 @@
-package eu.nitjsefnie.mod;
+package eu.nitjsefnie.mod.enchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
@@ -7,7 +7,7 @@ import net.minecraft.entity.EquipmentSlot;
 
 public class MultiRodEnchantment extends Enchantment {
     public static final EquipmentSlot[] VALID_SLOTS = new EquipmentSlot[] {EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND};
-    protected MultiRodEnchantment() {
+    public MultiRodEnchantment() {
         super(Rarity.RARE, EnchantmentTarget.FISHING_ROD, VALID_SLOTS);
     }
 
