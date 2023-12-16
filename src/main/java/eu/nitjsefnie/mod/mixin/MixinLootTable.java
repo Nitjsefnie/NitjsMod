@@ -54,6 +54,8 @@ public class MixinLootTable {
             Potion potion = Registries.POTION.getRandom(world.random).map(RegistryEntry.Reference::value).orElse(null);
             assert potion != null;
             PotionUtil.setPotion(stack, potion);
+        } else if (stack.isEnchantable()) {
+            EnchantmentHelper.enchant(world.random, stack, world.random.nextInt(90) + 1, true);
         }
 
         return ObjectArrayList.of(stack);
