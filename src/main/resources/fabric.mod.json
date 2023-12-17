@@ -14,10 +14,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"eu.nitjsefnie.mod.NitjsMod"
+          "eu.nitjsefni.mod.NitjsMod"
 		],
 		"client": [
-			"eu.nitjsefnie.mod.NitjsModClient"
+			"eu.nitjsefni.mod.NitjsModClient"
 		]
 	},
 	"mixins": [

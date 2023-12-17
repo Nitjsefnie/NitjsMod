@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "scs",
+    "shs",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:gold_ingot"
+    },
+    "c": {
+      "item": "minecraft:chest"
+    },
+    "h": {
+      "item": "minecraft:hopper"
+    }
+  },
+  "result": {
+    "item": "nitjsefni:stacker_up",
+    "count": 1
+  }
+}

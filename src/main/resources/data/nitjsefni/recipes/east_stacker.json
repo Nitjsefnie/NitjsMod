@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "nitjsefni:stacker_down"
+    }
+  ],
+  "result": {
+    "item": "nitjsefni:stacker_east",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_directional",
+	"textures": {
+	  "up": "nitjsefni:block/blockstackerdown",
+	  "down": "nitjsefni:block/blockstackerdown",
+		"north": "nitjsefni:block/blockstackerin",
+		"east": "nitjsefni:block/blockstackerdown",
+		"south": "nitjsefni:block/blockstackerout",
+		"west": "nitjsefni:block/blockstackerdown",
+		"particle": "#up"
+	}
+}

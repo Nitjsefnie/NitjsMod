@@ -8,3 +8,4 @@
 - Fixes bug where player effects would be removed when leaving The End
 ([MC-6431](https://bugs.mojang.com/browse/MC-6431))
 - Adds Destroyer item that can break unbreakable blocks
+- Adds a block that allows transfer of stacks between blocks, with blacklist and whitelist
