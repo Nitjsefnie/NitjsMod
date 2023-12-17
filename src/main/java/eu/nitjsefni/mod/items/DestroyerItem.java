@@ -26,7 +26,8 @@ public class DestroyerItem extends Item {
         if (target.equals(pos)) {
             context.getWorld().breakBlock(pos, false);
             stack.setNbt(null);
-        } else {
+        }
+        else {
             setTarget(stack, pos);
         }
 

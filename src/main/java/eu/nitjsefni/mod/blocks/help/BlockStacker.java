@@ -5,8 +5,8 @@ import net.minecraft.util.math.Direction;
 
 public interface BlockStacker extends BlockEntityProvider {
 
-	Direction getSourceOffset();
+    Direction getSourceOffset();
 
-	Direction getDestOffset();
+    Direction getDestOffset();
 
 }

@@ -3,13 +3,13 @@
   "package": "eu.nitjsefni.mod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MixinLootTable",
-    "MixinFishingBobberEntity",
     "MixinDebugStickItem",
+    "MixinFishingBobberEntity",
+    "MixinLootTable",
     "MixinPlayerManager",
     "MixinServerPlayerEntity"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }

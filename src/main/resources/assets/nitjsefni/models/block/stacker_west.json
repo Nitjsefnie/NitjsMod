@@ -1,12 +1,12 @@
 {
-	"parent": "block/cube_directional",
-	"textures": {
-	  "up": "nitjsefni:block/blockstackerleft",
-	  "down": "nitjsefni:block/blockstackerright",
-		"north": "nitjsefni:block/blockstackerright",
-		"east": "nitjsefni:block/blockstackerin",
-		"south": "nitjsefni:block/blockstackerleft",
-		"west": "nitjsefni:block/blockstackerout",
-		"particle": "#up"
-	}
+  "parent": "block/cube_directional",
+  "textures": {
+    "up": "nitjsefni:block/blockstackerleft",
+    "down": "nitjsefni:block/blockstackerright",
+    "north": "nitjsefni:block/blockstackerright",
+    "east": "nitjsefni:block/blockstackerin",
+    "south": "nitjsefni:block/blockstackerleft",
+    "west": "nitjsefni:block/blockstackerout",
+    "particle": "#up"
+  }
 }

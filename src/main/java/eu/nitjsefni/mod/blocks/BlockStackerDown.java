@@ -27,74 +27,74 @@ import java.util.List;
 
 public class BlockStackerDown extends BlockWithEntity implements BlockStacker {
 
-	public BlockStackerDown() {
-		super(FabricBlockSettings.create().hardness(2.5f));
-	}
+    public BlockStackerDown() {
+        super(FabricBlockSettings.create().hardness(2.5f));
+    }
 
-	@Override
-	public Direction getSourceOffset() {
-		return Direction.UP;
-	}
+    @Override
+    public Direction getSourceOffset() {
+        return Direction.UP;
+    }
 
-	@Override
-	public Direction getDestOffset() {
-		return Direction.DOWN;
-	}
+    @Override
+    public Direction getDestOffset() {
+        return Direction.DOWN;
+    }
 
-	@Override
-	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-		return new BlockEntityStacker(pos, state);
-	}
+    @Override
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new BlockEntityStacker(pos, state);
+    }
 
-	@Override
-	public BlockRenderType getRenderType(BlockState state) {
-		return BlockRenderType.MODEL;
-	}
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+    }
 
-	@Override
-	public List<ItemStack> getDroppedStacks(BlockState state, Builder builder) {
-		return List.of(new ItemStack(NitjsBlocks.STACKER_DOWN.asItem()));
-	}
+    @Override
+    public List<ItemStack> getDroppedStacks(BlockState state, Builder builder) {
+        return List.of(new ItemStack(NitjsBlocks.STACKER_DOWN.asItem()));
+    }
 
-	@Override
-	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state,
-			BlockEntityType<T> type) {
-		return checkType(type, NitjsBlockEntities.STACKER_BLOCK_ENTITY,
-				BlockEntityStacker::tick);
-	}
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state,
+                                                                  BlockEntityType<T> type) {
+        return checkType(type, NitjsBlockEntities.STACKER_BLOCK_ENTITY,
+                BlockEntityStacker::tick);
+    }
 
-	@Override
-	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand,
-			BlockHitResult hit) {
-		if (!world.isClient) {
-			NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
-			if (screenHandlerFactory != null) {
-				player.openHandledScreen(screenHandlerFactory);
-			}
-		}
-		return ActionResult.SUCCESS;
-	}
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand,
+                              BlockHitResult hit) {
+        if (!world.isClient) {
+            NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
+            if (screenHandlerFactory != null) {
+                player.openHandledScreen(screenHandlerFactory);
+            }
+        }
+        return ActionResult.SUCCESS;
+    }
 
-	@Override
-	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof BlockEntityStacker) {
-				ItemScatterer.spawn(world, pos, (BlockEntityStacker) blockEntity);
-				// update comparators
-				world.updateComparators(pos, this);
-			}
-			super.onStateReplaced(state, world, pos, newState, moved);
-		}
-	}
+    @Override
+    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+        if (state.getBlock() != newState.getBlock()) {
+            BlockEntity blockEntity = world.getBlockEntity(pos);
+            if (blockEntity instanceof BlockEntityStacker) {
+                ItemScatterer.spawn(world, pos, (BlockEntityStacker) blockEntity);
+                // update comparators
+                world.updateComparators(pos, this);
+            }
+            super.onStateReplaced(state, world, pos, newState, moved);
+        }
+    }
 
-	@Override
-	public boolean hasComparatorOutput(BlockState state) {
-		return true;
-	}
+    @Override
+    public boolean hasComparatorOutput(BlockState state) {
+        return true;
+    }
 
-	@Override
-	public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
-		return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
-	}
+    @Override
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+        return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
+    }
 }

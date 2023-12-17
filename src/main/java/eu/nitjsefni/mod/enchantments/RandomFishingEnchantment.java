@@ -6,7 +6,8 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 
 public class RandomFishingEnchantment extends Enchantment {
-    public static final EquipmentSlot[] VALID_SLOTS = new EquipmentSlot[] {EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND};
+    public static final EquipmentSlot[] VALID_SLOTS = new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND};
+
     public RandomFishingEnchantment() {
         super(Rarity.RARE, EnchantmentTarget.FISHING_ROD, VALID_SLOTS);
     }

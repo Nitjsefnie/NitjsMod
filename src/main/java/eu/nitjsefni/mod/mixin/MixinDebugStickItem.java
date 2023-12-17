@@ -23,17 +23,22 @@ import java.util.Collection;
 @Mixin(DebugStickItem.class)
 public class MixinDebugStickItem {
 
-    @Shadow private static void sendMessage(PlayerEntity player, Text message) {}
+    @Shadow
+    private static void sendMessage(PlayerEntity player, Text message) {
+    }
 
-    @Shadow private static <T extends Comparable<T>> BlockState cycle(BlockState state, Property<T> property, boolean inverse) {
+    @Shadow
+    private static <T extends Comparable<T>> BlockState cycle(BlockState state, Property<T> property, boolean inverse) {
         return null;
     }
 
-    @Shadow private static <T> T cycle(Iterable<T> elements, @Nullable T current, boolean inverse) {
+    @Shadow
+    private static <T> T cycle(Iterable<T> elements, @Nullable T current, boolean inverse) {
         return null;
     }
 
-    @Shadow private static <T extends Comparable<T>> String getValueString(BlockState state, Property<T> property) {
+    @Shadow
+    private static <T extends Comparable<T>> String getValueString(BlockState state, Property<T> property) {
         return null;
     }
 
@@ -56,14 +61,15 @@ public class MixinDebugStickItem {
         Property<?> property = stateManager.getProperty(string2);
         if (update) {
             if (property == null) {
-                property = (Property)collection.iterator().next();
+                property = (Property) collection.iterator().next();
             }
 
             BlockState blockState = cycle(state, property, player.shouldCancelInteraction());
             world.setBlockState(pos, blockState, 18);
             sendMessage(player, Text.translatable(((Item) (Object) this).getTranslationKey() + ".update", new Object[]{property.getName(), getValueString(blockState, property)}));
-        } else {
-            property = (Property)cycle((Iterable)collection, (Object)property, player.shouldCancelInteraction());
+        }
+        else {
+            property = (Property) cycle((Iterable) collection, (Object) property, player.shouldCancelInteraction());
             String string3 = property.getName();
             nbtCompound.putString(string, string3);
             sendMessage(player, Text.translatable(((Item) (Object) this).getTranslationKey() + ".select", new Object[]{string3, getValueString(state, property)}));

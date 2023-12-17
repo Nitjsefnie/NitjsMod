@@ -25,7 +25,9 @@ import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(LootTable.class)
 public class MixinLootTable {
-    @Shadow @Final private LootContextType type;
+    @Shadow
+    @Final
+    private LootContextType type;
 
     @ModifyReturnValue(method = "generateLoot(Lnet/minecraft/loot/context/LootContextParameterSet;)Lit/unimi/dsi/fastutil/objects/ObjectArrayList;", at = @At("RETURN"))
     public ObjectArrayList<ItemStack> randomfishing$overrideFishingLootIfEnchantmentPresent(ObjectArrayList<ItemStack> original, LootContextParameterSet parameterSet) {
@@ -54,7 +56,8 @@ public class MixinLootTable {
             Potion potion = Registries.POTION.getRandom(world.random).map(RegistryEntry.Reference::value).orElse(null);
             assert potion != null;
             PotionUtil.setPotion(stack, potion);
-        } else if (stack.isEnchantable()) {
+        }
+        else if (stack.isEnchantable()) {
             EnchantmentHelper.enchant(world.random, stack, world.random.nextInt(90) + 1, true);
         }
 

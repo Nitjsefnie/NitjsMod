@@ -27,7 +27,7 @@ public class MixinPlayerManager {
                                          BlockPos blockPos, float f, boolean bl, ServerWorld serverWorld,
                                          Optional optional, ServerWorld serverWorld2,
                                          ServerPlayerEntity serverPlayerEntity
-                                         ) {
+    ) {
         serverPlayerEntity.getActiveStatusEffects().forEach(
                 (name, eff) -> serverPlayerEntity.networkHandler.sendPacket(
                         new EntityStatusEffectS2CPacket(serverPlayerEntity.getId(), eff)

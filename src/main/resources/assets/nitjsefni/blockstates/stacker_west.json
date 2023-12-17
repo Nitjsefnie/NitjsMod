@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "nitjsefni:block/stacker_west"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "nitjsefni:block/stacker_west"
+    }
+  }
 }
