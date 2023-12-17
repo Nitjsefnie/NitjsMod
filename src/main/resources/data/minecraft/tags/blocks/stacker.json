@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "nitjsefni:stacker_east",
+    "nitjsefni:stacker_south",
+    "nitjsefni:stacker_west",
+    "nitjsefni:stacker_north",
+    "nitjsefni:stacker_up",
+    "nitjsefni:stacker_down"
+  ]
+}

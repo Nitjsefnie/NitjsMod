@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "nitjsefni",
+	"version": "${version}",
+	"name": "nitjsefni",
+	"description": "Quickiefabric is the fabric implementation of Quickie, a mot to speed up daily work in Minecraft.",
+	"authors": [
+		"Jottyfan"
+	],
+	"contact": {
+		"homepage": "https://gitlab.com/jottyfan/quickiefabric",
+		"sources": "https://gitlab.com/jottyfan/quickiefabric"
+	},
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"eu.nitjsefni.mod.QuickieFabric"
+		],
+		"client": [
+			"eu.nitjsefni.mod.QuickieFabricClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"fabric": "*",
+		"minecraft": "1.20.1",
+		"java": ">=17"
+	}
+}
